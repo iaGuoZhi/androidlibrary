@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.library1">
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="图书馆"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login_student" />
+        <activity android:name=".Login_teacher" />
+        <activity android:name=".Login_staff" />
+        <activity android:name=".Register_student" />
+        <activity android:name=".Register_teacher" />
+        <activity android:name=".Introduction" />
+        <activity android:name=".Student_homepage" />
+        <activity android:name=".Teacher_homepage" />
+        <activity android:name=".Staff_homepage"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/student_id"
+        android:title="学生"/>
+    <item
+        android:id="@+id/teacher_id"
+        android:title="教师"/>
+    <item
+        android:id="@+id/staff_id"
+        android:title="工作人员"/>
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="library"></dbname>
+    <version value="6"></version>
+    <list>
+        <mapping class="com.example.administrator.library1.Student"></mapping>
+        <mapping class="com.example.administrator.library1.Teacher"></mapping>
+        <mapping class="com.example.administrator.library1.Book"></mapping>
+        <mapping class="com.example.administrator.library1.Staff"></mapping>
+    </list>
+</litepal>
