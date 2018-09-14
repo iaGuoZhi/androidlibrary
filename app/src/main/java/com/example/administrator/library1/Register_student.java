@@ -1,5 +1,6 @@
 package com.example.administrator.library1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,7 +55,9 @@ public class Register_student extends AppCompatActivity {
                                 int reg_age=Integer.parseInt(editAge.getText().toString());
                                 Student student=new Student(editAccount.getText().toString(),editPassword1.getText().toString(),editName.getText().toString(),editStudentID.getText().toString(),editMailbox.getText().toString(),reg_age);
                                 student.save();
-                                Toast.makeText(Register_student.this,"注册成功",Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(Register_student.this,MainActivity.class);
+                                startActivity(intent);
+                                //Toast.makeText(Register_student.this,"注册成功",Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
@@ -70,5 +73,12 @@ public class Register_student extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        Intent intent=new Intent(Register_student.this,MainActivity.class);
+        startActivity(intent);
+        super.onPause();
     }
 }

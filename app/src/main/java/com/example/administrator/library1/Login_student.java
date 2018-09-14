@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.litepal.LitePal;
+import org.litepal.crud.LitePalSupport;
 
 import java.util.List;
 
@@ -27,6 +28,12 @@ public class Login_student extends AppCompatActivity {
         editPassword=findViewById(R.id.passwordStudent_id);
         checkBox=findViewById(R.id.rememberPassStudent_id);
         button_commit=findViewById(R.id.commitStudent_id);
+
+        //自动登录功能
+        final Simple simple=LitePal.find(Simple.class,1);
+        editAccount.setText(simple.getAccount());
+        editPassword.setText(simple.getPassword());
+
         button_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {                  //在这里之前已经出错
@@ -42,6 +49,20 @@ public class Login_student extends AppCompatActivity {
                         is_account_available=true;
                         if(st_password.equals(students_account.get(i).getPassword()))
                         {
+                            if(checkBox.isChecked())
+                            {
+                                Simple simple= LitePal.find(Simple.class,1);
+                                simple.setAccount(editAccount.getText().toString());
+                                simple.setPassword(editPassword.getText().toString());
+                                simple.save();
+                            }
+                            else
+                            {
+                                Simple simple1=LitePal.find(Simple.class,1);
+                                simple1.setAccount("");
+                                simple1.setPassword("");
+                                simple1.save();
+                            }
                             Intent intent=new Intent(Login_student.this,Student_homepage.class);
                             intent.putExtra("extra_data",i+1);
                             startActivity(intent);

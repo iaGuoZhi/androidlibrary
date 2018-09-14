@@ -26,6 +26,10 @@ public class Login_staff extends AppCompatActivity {
         staff_editPassword=findViewById(R.id.passwordStaff_id);
         staff_checkBox=findViewById(R.id.rememberPassStaff_id);
         staff_button_commit=findViewById(R.id.commitStaff_id);
+        Simple simple=LitePal.find(Simple.class,3);
+        staff_editAccount.setText(simple.getAccount());
+        staff_editPassword.setText(simple.getPassword());
+
         staff_button_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {                  //在这里之前已经出错
@@ -37,6 +41,20 @@ public class Login_staff extends AppCompatActivity {
                     if (st_account.equals(staffs_account.get(i).getAccount())) {  //get（i）这里的查询是从0开始的，即是get（0）查询的是id为1的员工
                         is_account_available = true;
                         if (st_password.equals(staffs_account.get(i).getPassword())) {
+                            if(staff_checkBox.isChecked())
+                            {
+                                Simple simple= LitePal.find(Simple.class,3);
+                                simple.setAccount(staff_editAccount.getText().toString());
+                                simple.setPassword(staff_editPassword.getText().toString());
+                                simple.save();
+                            }
+                            else
+                            {
+                                Simple simple1=LitePal.find(Simple.class,3);
+                                simple1.setAccount("");
+                                simple1.setPassword("");
+                                simple1.save();
+                            }
                             Intent intent = new Intent(Login_staff.this, Staff_homepage.class);
                             intent.putExtra("extra_data", i+1);
                             startActivity(intent);

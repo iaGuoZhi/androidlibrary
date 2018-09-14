@@ -12,6 +12,9 @@ public class Student extends LitePalSupport{
     private String account,name,password,student_ID,mailBox;
     private int age,bookAmount;
     private int bookList[]=new int[10];
+    private int bookyear[]=new int[10];
+    private int bookday[]=new int[10];
+
     public Student(String account, String password, String name, String student_ID, String mailBox, int age)
     {
         this.account=account;
@@ -24,6 +27,8 @@ public class Student extends LitePalSupport{
         for(int i=0;i<10;++i)
         {
             bookList[i]=0;
+            bookyear[i]=0;
+            bookday[i]=0;
         }
     }
     public int getId() {
@@ -71,9 +76,9 @@ public class Student extends LitePalSupport{
     public void setBookList(int[] bookList) {
         this.bookList = bookList;
     }
-    public void setBookList(int ammount,int book_id)
+    public void setBookList(int number,int book_id)
     {
-        this.bookList[ammount]=book_id;
+        this.bookList[number]=book_id;
     }
     public int[] getBookList() {
         return bookList;
@@ -88,5 +93,9 @@ public class Student extends LitePalSupport{
     {
         return bookList[number];
     }
+    public int getBookyear(int number){return bookyear[number];}
+    public int getBookday(int number){return bookday[number];}
+    public void setBookyear(int number,int year){this.bookyear[number]=year;}
+    public void setBookday(int number,int day){this.bookday[number]=day;}
 
 }

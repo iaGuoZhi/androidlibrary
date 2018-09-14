@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.library1">
 
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
@@ -25,7 +29,12 @@
         <activity android:name=".Introduction" />
         <activity android:name=".Student_homepage" />
         <activity android:name=".Teacher_homepage" />
-        <activity android:name=".Staff_homepage"></activity>
+        <activity android:name=".Staff_homepage" />
+        <activity android:name=".News" />
+        <activity android:name=".staff_input" />
+        <activity android:name=".Ranking" />
+        <activity android:name=".New_Books" />
+        <activity android:name=".Blacklist"></activity>
     </application>
 
 </manifest>

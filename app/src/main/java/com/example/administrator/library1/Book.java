@@ -7,7 +7,7 @@ public class Book extends LitePalSupport{
     int id;
     private String name;
     private String writer,page,price,time;
-    private int borrow_year,borrow_month,borrow_day,recommends,frequency,amount,in_shelf;
+    private int amount,in_shelf;
     public Book(String name,String writer,String page,String price,String time,int amount)
     {
         this.name=name;
@@ -16,7 +16,6 @@ public class Book extends LitePalSupport{
         this.price=price;
         this.time=time;
         this.amount=amount;
-        borrow_day=0;borrow_month=0;borrow_year=0;recommends=0;frequency=0;
         in_shelf=amount;
     }
     public void setAmount(int amount) {
@@ -37,32 +36,14 @@ public class Book extends LitePalSupport{
     public int getId() {
         return id;
     }
-    public void setFrequency(int frequency) {
-        this.frequency = frequency;
-    }
-    public int getFrequency() {
-        return frequency;
-    }
     public void setName(String name) {
         this.name = name;
     }
     public void setPrice(String price) {
         this.price = price;
     }
-    public void setBorrow_day(int borrow_day) {
-        this.borrow_day = borrow_day;
-    }
-    public void setBorrow_month(int borrow_month) {
-        this.borrow_month = borrow_month;
-    }
-    public void setBorrow_year(int borrow_year) {
-        this.borrow_year = borrow_year;
-    }
     public void setPage(String page) {
         this.page = page;
-    }
-    public void setRecommends(int recommends) {
-        this.recommends = recommends;
     }
     public void setTime(String time) {
         this.time = time;
@@ -72,18 +53,6 @@ public class Book extends LitePalSupport{
     }
     public String getName() {
         return name;
-    }
-    public int getBorrow_day() {
-        return borrow_day;
-    }
-    public int getBorrow_month() {
-        return borrow_month;
-    }
-    public int getBorrow_year() {
-        return borrow_year;
-    }
-    public int getRecommends() {
-        return recommends;
     }
     public String getPage() {
         return page;

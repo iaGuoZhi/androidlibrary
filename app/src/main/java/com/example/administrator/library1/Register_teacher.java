@@ -1,5 +1,6 @@
 package com.example.administrator.library1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,5 +71,12 @@ public class Register_teacher extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        Intent intent=new Intent(Register_teacher.this,MainActivity.class);
+        startActivity(intent);
+        super.onPause();
     }
 }

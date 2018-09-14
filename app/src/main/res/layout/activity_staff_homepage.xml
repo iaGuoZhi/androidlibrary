@@ -23,18 +23,13 @@
         android:layout_height="wrap_content"
         android:text="增加书籍"/>
     <Button
-        android:id="@+id/sta_output_book_id"
+        android:id="@+id/sta_return_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="移除书籍"/>
-    <Button
-        android:id="@+id/sta_add_news_Id"
+        android:text="返回主菜单"/>
+    <ListView
+        android:id="@+id/staff_home_list_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="添加新闻、通知"/>
-    <Button
-        android:id="@+id/sta_change_intro_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="改写介绍"/>
+        android:layout_height="wrap_content">
+    </ListView>
 </LinearLayout>

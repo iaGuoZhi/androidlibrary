@@ -4,9 +4,6 @@
         android:id="@+id/student_id"
         android:title="学生"/>
     <item
-        android:id="@+id/teacher_id"
-        android:title="教师"/>
-    <item
         android:id="@+id/staff_id"
         android:title="工作人员"/>
 </menu>

@@ -7,12 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.litepal.LitePal;
+/*------
+   郭志---18年暑假
+ */
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button_introduce,button_information,button_ranking,button_newBooks,button_register_student,button_register_teacher,button_blacklist;
+    private Button button_introduce,button_information,button_ranking,button_newBooks,button_register_student,button_blacklist;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main,menu);
@@ -27,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent_student=new Intent(MainActivity.this,Login_student.class);
                 startActivity(intent_student);
                 break;
-            case R.id.teacher_id:
+            /*case R.id.teacher_id:
                 Intent intent_teacher=new Intent(MainActivity.this,Login_teacher.class);
                 startActivity(intent_teacher);
-                break;
+                break;*/
             case R.id.staff_id:
                 Intent intent_staff=new Intent(MainActivity.this,Login_staff.class);
                 startActivity(intent_staff);
@@ -45,9 +49,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button_introduce=findViewById(R.id.introduce_id);
         button_register_student=findViewById(R.id.registerStudent_id);
-        button_register_teacher=findViewById(R.id.registerTeacher_id);
         button_blacklist=findViewById(R.id.blacklist_id);
         button_information=findViewById(R.id.news_id);
+        button_ranking=findViewById(R.id.ranking_id);
+        button_newBooks=findViewById(R.id.newBook_id);
+
         button_introduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,21 +70,38 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        button_register_teacher.setOnClickListener(new View.OnClickListener() {
+        button_blacklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,Register_teacher.class);
+                Intent intent=new Intent(MainActivity.this,Blacklist.class);
                 startActivity(intent);
                 finish();
             }
         });
-        button_blacklist.setOnClickListener(new View.OnClickListener() {
+        button_information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LitePal.getDatabase();
-                Book book=new Book("He changed China","jiang","278","23.8","2002/2/12",2);
-                book.save();
+                Intent intent=new Intent(MainActivity.this,News.class);
+                startActivity(intent);
+                finish();
             }
         });
+        button_ranking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,Ranking.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        button_newBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,New_Books.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }

@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Teacher extends LitePalSupport{
     private int id;
-    private String account,name,password,student_ID,mailBox;
-    private int age,bookAmount;
+    private String account,name,password,teacher_ID,mailBox;
+    private int bookAmount,age;
     private int bookList[]=new int[10];
-    public Teacher(String account, String password, String name, String student_ID, String mailBox, int age)
+    public Teacher(String account, String password, String name, String teacher_ID, String mailBox, int age)
     {
         this.account=account;
         this.password=password;
         this.name=name;
-        this.student_ID=student_ID;
+        this.teacher_ID=teacher_ID;
         this.mailBox=mailBox;
         this.age=age;
         bookAmount=0;
@@ -47,8 +47,8 @@ public class Teacher extends LitePalSupport{
     public void setMailBox(String mailBox) {
         this.mailBox = mailBox;
     }
-    public void setStudent_ID(String student_ID) {
-        this.student_ID = student_ID;
+    public void setTeacher_ID(String teacher_ID) {
+        this.teacher_ID = teacher_ID;
     }
     public String getName() {
         return name;
@@ -62,8 +62,8 @@ public class Teacher extends LitePalSupport{
     public String getPassword() {
         return password;
     }
-    public String getStudent_ID() {
-        return student_ID;
+    public String getTeacher_ID() {
+        return teacher_ID;
     }
     public String getMailBox() {
         return mailBox;
